@@ -16,8 +16,9 @@ package tencentcloud
 
 import (
 	"fmt"
-	"github.com/tencentcloudstack/pulumi-tencentcloud/provider/info"
 	"path/filepath"
+
+	"github.com/tencentcloudstack/pulumi-tencentcloud/provider/info"
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
@@ -31,7 +32,7 @@ const (
 )
 
 // Provider returns additional overlaid schema and metadata associated with the provider.
-//go generate:
+// go generate:
 func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
 	p := shimv2.NewProvider(tencentcloud.Provider())
@@ -43,12 +44,12 @@ func Provider() tfbridge.ProviderInfo {
 		DisplayName:       "TencentCloud",
 		Publisher:         "TencentCloudStack",
 		LogoURL:           "https://avatars.githubusercontent.com/u/68363092",
-		PluginDownloadURL: "github://api.github.com/tencentcloudstack",
+		PluginDownloadURL: "github://api.github.com/everpcpc",
 		Description:       "A Pulumi package for creating and managing Tencent Cloud resources.",
 		Keywords:          []string{"pulumi", "tencentcloud", "category/cloud"},
 		License:           "Apache-2.0",
 		Homepage:          "https://www.pulumi.com",
-		Repository:        "https://github.com/tencentcloudstack/pulumi-tencentcloud",
+		Repository:        "https://github.com/everpcpc/pulumi-tencentcloud",
 		GitHubOrg:         "tencentcloudstack",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"region": {
